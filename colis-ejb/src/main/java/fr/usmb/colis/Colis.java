@@ -24,34 +24,35 @@ public class Colis implements Serializable{
 
     public Colis(int id, double poids, int valeur, String origine, String destination) {
         this.id = id;
-        this.solde = solde;
+        this.poids = poids;
         this.valeur = valeur;
         this.origine = origine;
         this.destination = destination;
     }
 
-    public String getId() {
+    public int getId() {
         return this.id;
     }
 
-    private void setId(String id) {
+    
+    public void setId(int id) {
          this.id = id;
     }
 
-    public double getSolde() {
-        return this.solde;
+    public double getPoids() {
+        return this.poids;
     }
 
-    public void setSolde(double solde) {
-        this.solde = solde;
+    public void setPoids(double poids) {
+        this.poids = poids;
     }
 
 
-    public String getValeur() {
-        return this.id;
+    public int getValeur() {
+        return this.valeur;
     }
 
-    private void setValeur(int valeur) {
+    public void setValeur(int valeur) {
          this.valeur = valeur;
     }
 

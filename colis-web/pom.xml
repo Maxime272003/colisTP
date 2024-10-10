@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>fr.usmb.colis</groupId>
-    <artifactId>compte-web</artifactId>
+    <artifactId>colis-web</artifactId>
     <packaging>war</packaging>
 
     <properties>
