@@ -1,4 +1,4 @@
-package fr.usmb.jee.banque;
+package fr.usmb.colis;
 
 import java.io.Serializable;
 
