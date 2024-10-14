@@ -1,1 +1,3 @@
-fr\usmb\colis\Main.class
+fr\usmb\colis\MiseAJourServlet.class
+fr\usmb\colis\SuiviServlet.class
+fr\usmb\colis\EnregistrementServlet.class
