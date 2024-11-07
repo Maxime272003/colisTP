@@ -71,37 +71,33 @@ Dans la section `<drivers>` :
 
 1. Téléchargez et installez PostgreSQL depuis le site officiel : https://www.postgresql.org/download/.
 2. Ajoutez le répertoire `bin` de PostgreSQL aux variables d’environnement de l’utilisateur.
-3. Ouvrez PowerShell et naviguez vers le répertoire `bin` de PostgreSQL, par exemple :
+3. Ouvrez PowerShell et naviguez naviguez vers le répertoire du projet :
     ```powershell
-    cd "C:\Users\[votre_nom]\Desktop\pgsql\bin"
+    cd "C:\Users\[votre_nom]\Desktop\[nom_du_repertoire_cloné]"
     ```
 4. Initialisez une nouvelle instance de base de données dans un dossier `data` du répertoire Git cloné :
     ```powershell
     initdb -D "C:\Users\[votre_nom]\Desktop\[nom_du_repertoire_cloné]\data" -U postgres -E UTF8 -A scram-sha-256 --pwfile "password.txt"
     ```
-5. Naviguez vers le répertoire du projet :
-    ```powershell
-    cd "C:\Users\[votre_nom]\Desktop\[nom_du_repertoire_cloné]"
-    ```
-6. Démarrez le serveur PostgreSQL :
+5. Démarrez le serveur PostgreSQL :
     ```powershell
     pg_ctl start -D .\data\
     ```
-7. Connectez-vous à PostgreSQL en tant que superutilisateur :
+6. Connectez-vous à PostgreSQL en tant que superutilisateur :
     ```powershell
     psql -U postgres
     ```
-8. Lorsqu'on vous demande un mot de passe, entrez "colis".
-9. Créez un nouvel utilisateur et une nouvelle base de données :
+7. Lorsqu'on vous demande un mot de passe, entrez "colis".
+8. Créez un nouvel utilisateur et une nouvelle base de données :
     ```sql
     CREATE USER tp_colis WITH PASSWORD 'colis';
     CREATE DATABASE colisdb WITH OWNER tp_colis;
     ```
-10. Quittez psql avec la commande `\q`, puis reconnectez-vous avec le nouvel utilisateur :
+9. Quittez psql avec la commande `\q`, puis reconnectez-vous avec le nouvel utilisateur :
     ```powershell
     psql -U tp_colis -d colisdb
     ```
-11. Créez la table `Colis` :
+10. Créez la table `Colis` :
     ```sql
     CREATE TABLE Colis (
         id SERIAL PRIMARY KEY,
@@ -116,7 +112,7 @@ Dans la section `<drivers>` :
         version INT DEFAULT 0
     );
     ```
-12. Vérifiez que la table a été créée correctement :
+11. Vérifiez que la table a été créée correctement :
     ```sql
     \dt
     \d Colis
