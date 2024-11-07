@@ -71,7 +71,7 @@ Dans la section `<drivers>` :
 
 1. Téléchargez et installez PostgreSQL depuis le site officiel : https://www.postgresql.org/download/.
 2. Ajoutez le répertoire `bin` de PostgreSQL aux variables d’environnement de l’utilisateur.
-3. Ouvrez PowerShell et naviguez naviguez vers le répertoire du projet :
+3. Ouvrez PowerShell et naviguez vers le répertoire du projet :
     ```powershell
     cd "C:\Users\[votre_nom]\Desktop\[nom_du_repertoire_cloné]"
     ```
