@@ -54,7 +54,7 @@
     SELECT * FROM colis;
     ```
 
-## Configuration manuelle de l'application
+## OU configuration manuelle de l'application
 
 ### 1. Cloner le dépôt Git
 Commencez par cloner le dépôt Git de l'application sur votre machine :
