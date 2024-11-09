@@ -6,13 +6,55 @@
 - Hery Ny aina Rasoamiaramanana
 
 ## Choix d'implémentation
-- Utilisation de JPA pour la persistance des données
-- Servlets pour la gestion des requêtes HTTP
-- JSP pour l'affichage des pages web
-- PostgreSQL comme système de gestion de base de données
-- WildFly comme serveur d'application
+- **JPA** pour la persistance des données
+- **Servlets** pour la gestion des requêtes HTTP
+- **JSP** pour l'affichage des pages web
+- **PostgreSQL** comme système de gestion de base de données
+- **WildFly** comme serveur d'application
 
-## Prérequis pour démarrer
+## Prérequis
+
+- Docker et Docker Compose (si vous utilisez Docker pour l'exécution)
+- WildFly et PostgreSQL installés manuellement si vous optez pour la configuration sans Docker
+
+## Lancement de l'application avec Docker
+
+1. **Cloner le dépôt Git** : Clonez le dépôt Git sur votre machine :
+    ```bash
+    git clone [URL_DU_DEPOT_GIT]
+    cd [nom_du_repertoire_cloné]
+    ```
+
+2. **Lancer l'application avec Docker Compose** :
+    Exécutez la commande suivante pour construire et lancer les conteneurs Docker :
+    ```bash
+    docker-compose up --build
+    ```
+
+3. **Accéder à l'application** :
+    Une fois démarrée, l'application sera accessible via le navigateur à l'adresse [http://localhost:8080/colis](http://localhost:8080/colis). 
+
+4. **Enregistrement d'un colis** :
+    Enregistrez un colis dans l'application avec les informations suivantes :
+    - **Poids** : 2 kg
+    - **Valeur** : 30.0 €
+    - **Origine** : France
+    - **Destination** : New York City, USA
+    - **Latitude** : 48.8566
+    - **Longitude** : 2.3522
+    - **Emplacement actuel** : Paris, France
+
+5. **Vérification dans la base de données** :
+    Pour voir le colis enregistré, exécutez la commande suivante pour accéder à PostgreSQL :
+    ```bash
+    docker exec -it postgres-db psql -U tp_colis -d colisdb
+    ```
+    Ensuite, lancez la commande SQL suivante pour vérifier le colis :
+    ```sql
+    SELECT * FROM colis;
+    ```
+
+## Configuration manuelle de l'application
 
 ### 1. Cloner le dépôt Git
 Commencez par cloner le dépôt Git de l'application sur votre machine :
@@ -164,5 +206,3 @@ Pour mettre à jour un colis existant, spécifiez l'identifiant du colis et modi
 ### Suivi d'un colis
 
 Pour suivre un colis, sélectionnez son identifiant et consultez son statut actuel et son emplacement.
-
-

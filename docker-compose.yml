@@ -1,0 +1,35 @@
+services:
+  wildfly:
+    image: quay.io/wildfly/wildfly:latest
+    container_name: wildfly-1
+    volumes:
+      - ./standalone.xml:/opt/jboss/wildfly/standalone/configuration/standalone.xml
+      - ./target/colis-ear-1.0-SNAPSHOT.ear:/opt/jboss/wildfly/standalone/deployments/colis-ear-1.0-SNAPSHOT.ear
+      - ./postgresql-42.7.4.jar:/opt/jboss/wildfly/modules/system/layers/base/org/postgresql/main/postgresql-42.7.4.jar
+      - ./module.xml:/opt/jboss/wildfly/modules/system/layers/base/org/postgresql/main/module.xml
+    ports:
+      - "8080:8080"
+      - "9990:9990"
+    environment:
+      - POSTGRES_USER=tp_colis
+      - POSTGRES_PASSWORD=colis
+      - POSTGRES_DB=colisdb
+    depends_on:
+      - db
+    command: >
+      /bin/sh -c "
+        rm -rf /opt/jboss/wildfly/standalone/deployments/*
+        /opt/jboss/wildfly/bin/standalone.sh -b 0.0.0.0
+      "
+
+  db:
+    image: postgres:13
+    container_name: postgres-db
+    environment:
+      - POSTGRES_USER=tp_colis
+      - POSTGRES_PASSWORD=colis
+      - POSTGRES_DB=colisdb
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
