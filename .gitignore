@@ -11,7 +11,9 @@
 .mtj.tmp/
 
 # Package Files #
+colis-ear/target/colis-ear-1.0-SNAPSHOT.ear
 *.jar
+!postgresql-42.7.4.jar
 *.war
 *.nar
 *.zip
