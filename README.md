@@ -36,8 +36,8 @@
 
 4. **Enregistrement d'un colis** :
     Enregistrez un colis dans l'application avec les informations suivantes :
-    - **Poids** : 2 kg
-    - **Valeur** : 30.0 €
+    - **Poids** : 2 
+    - **Valeur** : 30 
     - **Origine** : France
     - **Destination** : New York City, USA
     - **Latitude** : 48.8566
@@ -54,7 +54,7 @@
     SELECT * FROM colis;
     ```
 
-## Configuration manuelle de l'application
+## OU configuration manuelle de l'application
 
 ### 1. Cloner le dépôt Git
 Commencez par cloner le dépôt Git de l'application sur votre machine :
@@ -173,8 +173,8 @@ Dans la section `<drivers>` :
 ## Fonctionnement de l'application
 
 Prenons l'exemple de l'enregistrement du colis suivant :
-- **Poids** : 2 kg
-- **Valeur** : 30.0 €
+- **Poids** : 2 
+- **Valeur** : 30
 - **Origine** : France
 - **Destination** : New York City, USA
 - **Latitude** : 48.8566
