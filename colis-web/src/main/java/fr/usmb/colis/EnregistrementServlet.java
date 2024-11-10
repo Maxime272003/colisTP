@@ -30,10 +30,10 @@ public class EnregistrementServlet extends HttpServlet {
             response.sendRedirect("confirmation.jsp");
         } catch (NumberFormatException e) {
             request.setAttribute("error", "Erreur de format dans les données saisies");
-            request.getRequestDispatcher("erreur.jsp").forward(request, response);
+            request.getRequestDispatcher("enregistrement.jsp").forward(request, response);
         } catch (Exception e) {
             request.setAttribute("error", "Une erreur est survenue lors de l'enregistrement du colis");
-            request.getRequestDispatcher("erreur.jsp").forward(request, response);
+            request.getRequestDispatcher("enregistrement.jsp").forward(request, response);
         }
     }
 }
